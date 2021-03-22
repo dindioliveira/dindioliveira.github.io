@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingrid Oliveira</title>
+
+    <link
+      rel="shortcut icon"
+      href="./src/assets/img/me.svg"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/menu.css" />
+    <link rel="stylesheet" href="src/css/home.css" />
+    <link rel="stylesheet" href="src/css/overview.css" />
+    <link rel="stylesheet" href="src/css/projects.css" />
+    <link rel="stylesheet" href="src/css/study.css" />
+    <link rel="stylesheet" href="src/css/open-source.css" />
+    <link rel="stylesheet" href="src/css/about.css" />
+    <link rel="stylesheet" href="src/css/scroll.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+
+    <div class="navbar transform" id="navbar"></div>
+
+    <div class="name-scroll transform" id="name-scroll">
+      <a href="#home">
+        Ingrid Oliveria
+      </a>
+    </div>
+
+    <a class="scroll-up hidden" href="#home" id="scroll-up">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <div class="menu hidden" id="menu">
+      <ul>
+        <li id="li-menu">
+          <i class="fas fa-bars menu-icon"></i>
+          <ul class="dropdown" aria-label="submenu" id="dropdown">
+            <li>
+              <a href="#home">Início<i class="fas fa-home"></i></a>
+            </li>
+            <li>
+              <a href="#overview">Rivaldo<i class="fas fa-user-circle"></i></a>
+            </li>
+            <li>
+              <a href="#projects">Projetos<i class="fas fa-code"></i></a>
+            </li>
+            <li>
+              <a href="#study">Estudos<i class="fas fa-graduation-cap"></i></a>
+            </li>
+            <li>
+              <a href="#open-source">OpenSource<i style="font-weight: bold;" class="fab fa-osi"></i></a>
+            </li>
+            <li>
+              <a href="#about">Sobre<i class="fas fa-address-card"></i></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="home" id="home">
+      <div class="name">
+        <span
+          >
+          Ingrid Oliveira
+        </span>
+        <span class="sub-name">Designer de <span>Animação</span></span>
+      </div>
+
+      <div class="start anime">
+        <a href="#overview">
+          <button><i class="fab fa-google-play"></i> Start</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="overview" id="overview">
+      <div class="title anime-opacity">
+        <div class="typing typing-anime" id="typing-overview">
+          <span class="magenta">Informações</span>
+        </div>
+      </div>
+
+      <div class="bar anime-opacity"></div>
+      <div class="divider-overview anime-opacity"></div>
+
+      <div class="rivaldo anime">
+        <span class="line">
+          <span class="tab key">Nome</span><span class="two-point">:</span>
+          <span class="value">Ingrid Oliveira</span>
+        </span>
+
+        <span class="line">
+          <span class="tab key">Estado</span><span class="two-point">:</span>
+          <span class="value">São Paulo</span>
+        </span>
+
+        <span class="line">
+          <span class="tab key">Idade</span><span class="two-point">:</span>
+          <span class="number">20</span>
+        </span>
+
+        <span class="line">
+          <span class="tab key">E-mail</span><span class="two-point">:</span>
+          <span class="value">seu email</span
+          >
+        </span>
+
+        <span class="line">
+          <span class="tab key">Portfólio</span><span class="two-point">:</span>
+          <span class="value">@artdindi_</span
+          >
+        </span>
+
+        <span class="line">
+          <span class="tab key">Formação</span
+          ><span class="two-point">:</span>
+          <span class="value">Cursando Design de Animação - Anhembi Morumbi</span
+          >
+        </span>
+
+        
+
+      </div>
+    </div>
+
+    <div class="projects" id="projects">
+      <div class="divider anime-opacity">
+        <span></span
+        ><span
+          ><div class="title">
+            <div class="typing typing-anime" id="typing-projects">
+              <div class="cd magenta">Projetos</div>
+            </div>
+          </div></span
+        ><span></span>
+      </div>
+
+      <div class="project pizza anime-opacity">
+        <div class="article pizza-progress">
+          <div class="link">
+            <a
+              href="https://www.instagram.com/artdindi_/"
+              target="_blank"
+              title="Ir para PizzaDelivery"
+              ><i class="fas fa-external-link-alt"></i
+            ></a>
+            
+          </div>
+          <div class="project-name">
+            <span class="number">1.</span>Uma arte qualquer 🎨
+          </div>
+          <div class="project-description">
+            <ul>
+              <li>
+                <i class="fas fa-chevron-right"></i> Aplicação de vendas para
+                pizzarias
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i> Descrição da arte qualquer
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i> Descrição da arte qualquer
+              </li>
+              <li><i class="fas fa-chevron-right"></i> Descrição da arte qualquer</li>
+              <li>
+                <div class="progress">
+                  <div class="progress-done" data-done="56"></div>
+                  <div class="progress-text">
+                    <div>O que eu usei? </div>
+                    <div class="percentage">56 <i class="fas fa-percentage"></i></div>
+                  </div>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-done" data-done="25"></div>
+                  <div class="progress-text">
+                    <div>O que eu usei?</div>
+                    <div class="percentage">25 <i class="fas fa-percentage"></i></div>
+                  </div>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-done" data-done="12"></div>
+                  <div class="progress-text">
+                    <div>O que eu usei?</div>
+                    <div class="percentage">12 <i class="fas fa-percentage"></i></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="container">
+          <a
+            href="https://www.linkedin.com/feed/update/urn:li:activity:6778744637642305536/"
+            target="_blank"
+            title="Ir para PizzaDelivery"
+          >
+            <img src="./src/assets/img/pizza.png" alt="Pizza Delivery" />
+            <img src="./src/assets/img/pizza.png" alt="Pizza Delivery" />
+            <img src="./src/assets/img/pizza.png" alt="Pizza Delivery" />
+          </a>
+        </div>
+      </div>
+
+    <div class="study" id="study">
+      <div class="divider anime-opacity">
+        <span></span
+        ><span
+          ><div class="title">
+            <div class="typing typing-anime" id="typing-study">
+              
+              <div class="cd magenta">Estudos</div>
+            </div>
+          </div></span
+        ><span></span>
+      </div>
+
+      <div class="study-article anime">
+        <div class="tech angular tech-border">
+          <div class="tech-title">Estudo 1</div>
+          <div class="tech-description">
+           Descrição do <span>estudo</span>
+          </div>
+          <div class="tech-logo">
+            <i class="fab fa-angular"></i>
+          </div>
+        </div>
+        <div class="tech node tech-border">
+          <div class="tech-title">Estudo 2</div>
+          <div class="tech-description">
+            Descrição do <span>estudo</span>
+          </div>
+          <div class="tech-logo">
+            <i class="fab fa-node"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="open-source" id="open-source">
+      <div class="divider anime-opacity">
+        <span></span
+        ><span
+          ><div class="title">
+            <div class="typing typing-anime" id="typing-open-source">
+              $
+              <div class="cd magenta">Outra coisa</div>
+            </div>
+          </div></span
+        ><span></span>
+      </div>
+
+      <div class="open-source-article anime">
+        <div class="open-title">
+          Fogo do Doom 🔥
+        </div>
+        <div class="open-content">
+          <div class="fire">
+            <canvas id="fireCanvas"></canvas>
+            <a
+              class="btn"
+              href="https://pedrorivald.github.io/fire-rgb-canvas"
+              target="_blank"
+              title="Ir para Fogo do Doom RGB"
+            >
+              <div>Ver Projeto <i class="fas fa-external-link-alt"></i></div>
+            </a>
+          </div>
+          <div class="open-description">
+            Fogo do Doom foi um projeto em JavaScript inicialmente implementado
+            por
+            <a
+              href="https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw"
+              target="_blank"
+              title="Ir para Filipe Deschamps"
+              >Filipe Deschamps</a
+            >. Após isso ele publicou um <a
+            href="https://www.youtube.com/watch?v=HCjDjsHPOco"
+            target="_blank"
+            title="Ir para o vídeo"
+            >vídeo</a
+          > sobre as implementações da comunidade,
+              então fiz minha própria <a
+              href="https://github.com/pedrorivald/fire-rgb-canvas"
+              target="_blank"
+              title="Ir para projeto no Github"
+              >versão</a
+            > utilizando <span>Canvas</span> e adicionando
+              a funcionalidade de <span>RGB</span> ao fogo.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about" id="about">
+      <div class="divider anime-opacity">
+        <span></span
+        ><span
+          ><div class="title">
+            <div class="typing typing-anime" id="typing-about">
+              <div class="cd magenta">Sobre</div>
+            </div>
+          </div></span
+        ><span></span>
+      </div>
+
+      <div class="about-article anime">
+        <div class="about-contact">
+          <div class="img">
+            <img
+              src="https://media-exp1.licdn.com/dms/image/C4D35AQE-U_ruhKzakQ/profile-framedphoto-shrink_800_800/0/1616124427094?e=1616508000&v=beta&t=ZmjaY6J00UYArRlxzQ2mpOost4BwkHNwCdBIgmDqxAo"
+              alt="Ingrid"
+              title="Avatar Ingrid Oliveira"
+            />
+          </div>
+
+          <div class="contacts">
+
+            <div class="contact">
+              <a
+                href="mailto:dindi-d@hotmail.com"
+                target="_blank"
+                title="Email"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+  
+
+            <!-- <div class="contact">
+              <a href="https://github.com/pedrorivald" target="_blank"
+                ><i class="fab fa-discord"></i
+              ></a>
+            </div> -->
+
+            <div class="contact">
+              <a
+                href="https://www.linkedin.com/in/ingrid-oliveira-silva-90aa341a3/"
+                title="LinkedIn"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+
+            <div class="contact">
+              <a
+                href="https://www.instagram.com/artdindi_/"
+                target="_blank"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="text">
+            <i class="fas fa-quote-left"></i> Em 2018 comecei um
+            <span>curso</span> Técnico de <span>Informática</span>, nesse
+            momento obtive meu primeiro contato com <span>programação</span> e
+            achei <span>surreal</span> o poder que ela tem de
+            <span>transformar</span> o mundo. Desde então me dedico diariamente
+            aos estudos referentes a programação, com <span>ênfase</span> no
+            desenvolvimento <span>FrontEnd</span>.
+            <i class="fas fa-quote-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/js/particles.js"></script>
+    <script src="src/js/fire.js"></script>
+    <script src="src/js/app.js"></script>
+    <script src="./src/js/scroll.js"></script>
+    <script src="src/js/events.js"></script>
+  </body>
+</html>
