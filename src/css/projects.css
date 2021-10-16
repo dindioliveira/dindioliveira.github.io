@@ -128,10 +128,7 @@
   cursor: pointer;
 }
 
-.pizza .container {
-  background: var(--color-yellow);
-  box-shadow: 0 0 40px var(--color-yellow);
-}
+
 
 .textando .container {
   background: var(--color-purpleUltraLight);
