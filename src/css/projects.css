@@ -86,12 +86,12 @@
   box-shadow: #183268 0px 3px 8px;
 }
 
-.pizza .progress-done { background: var(--color-yellow); }
+.pizza .progress-done { background: var(--color-purpleUltraLight); }
 .textando .progress-done { background: var(--color-purpleUltraLight); }
 .gitdex .progress-done { background: #183268; }
 
 .pizza .progress-text .percentage, .pizza .progress-text .percentage i {
-  color: var(--color-yellow);
+  color: #fff;
 }
 
 .textando .progress-text .percentage, .textando .progress-text .percentage i {
@@ -102,9 +102,9 @@
   color: #355caf;
 }
 
-.pizza .progress-text { color: var(--background-color);}
-.textando .progress-text { color: var(--background-color); }
-.gitdex .progress-text { color: var(--color-lightWhite); }
+.pizza .progress-text { color: #fff;}
+.textando .progress-text { color: #fff; }
+.gitdex .progress-text { color: #fff; }
 
 .article .project-name .number {
   color: var(--color-green);
