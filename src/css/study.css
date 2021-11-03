@@ -14,8 +14,7 @@
 
 .study .title {
   width: 230px;
-  display: flex;
-  justify-content: flex-start;
+  text-align: center;
   padding: 15px 30px 15px 30px;
   background-color: var(--background-color);
   border-radius: 20px;
