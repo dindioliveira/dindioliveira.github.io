@@ -1,412 +1,619 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ingrid Oliveira</title>
 
-    <link
-      rel="shortcut icon"
-      href="./src/assets/img/me.svg"
-      type="image/x-icon"
-    />
-    
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingrid Oliveira</title>
 
-    <script
-      src="https://code.jquery.com/jquery-2.2.4.min.js"
-      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-      crossorigin="anonymous"
-    ></script>
+  <link rel="shortcut icon" href="./src/assets/img/me.svg" type="image/x-icon" />
 
-    <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="stylesheet" href="src/css/menu.css" />
-    <link rel="stylesheet" href="src/css/home.css" />
-    <link rel="stylesheet" href="src/css/overview.css" />
-    <link rel="stylesheet" href="src/css/projects.css" />
-    <link rel="stylesheet" href="src/css/study.css" />
-    <link rel="stylesheet" href="src/css/open-source.css" />
-    <link rel="stylesheet" href="src/css/about.css" />
-    <link rel="stylesheet" href="src/css/scroll.css" />
-  </head>
-  <body>
-    <div id="particles-js"></div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
 
-    <div class="navbar transform" id="navbar"></div>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-    <div class="name-scroll transform" id="name-scroll">
-      <a href="#home">
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/css/menu.css" />
+  <link rel="stylesheet" href="src/css/home.css" />
+  <link rel="stylesheet" href="src/css/overview.css" />
+  <link rel="stylesheet" href="src/css/projects.css" />
+  <link rel="stylesheet" href="src/css/study.css" />
+  <link rel="stylesheet" href="src/css/open-source.css" />
+  <link rel="stylesheet" href="src/css/about.css" />
+  <link rel="stylesheet" href="src/css/scroll.css" />
+
+  <style>
+    .slider {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      max-width: 800px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 100%;
+      max-width: 500px;
+      height: 500px;
+      position: absolute;
+      transition: all 0.5s;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    .slide2 {
+      width: 100%;
+      max-width: 500px;
+      height: 500px;
+      position: absolute;
+      transition: all 0.5s;
+    }
+
+    .slide2 img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    .btn {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-radius: 50%;
+      z-index: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      font-size: 18px;
+    }
+
+    .btn:active {
+      transform: scale(1.1);
+    }
+
+    .btn-prev {
+      top: 45%;
+      left: 2%;
+    }
+
+    .btn-next {
+      top: 45%;
+      right: 2%;
+    }
+
+    .btn2 {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-radius: 50%;
+      z-index: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      font-size: 18px;
+    }
+
+    .btn2:active {
+      transform: scale(1.1);
+    }
+
+    .btn-prev2 {
+      top: 45%;
+      left: 2%;
+    }
+
+    .btn-next2 {
+      top: 45%;
+      right: 2%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <div class="navbar transform" id="navbar"></div>
+
+  <div class="name-scroll transform" id="name-scroll">
+    <a href="#home">
+      Ingrid Oliveira
+    </a>
+  </div>
+
+  <a class="scroll-up hidden" href="#home" id="scroll-up">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <div class="menu hidden" id="menu">
+    <ul>
+      <li id="li-menu">
+        <i class="fas fa-bars menu-icon"></i>
+        <ul class="dropdown" aria-label="submenu" id="dropdown">
+          <li>
+            <a href="#home">Início<i class="fas fa-home"></i></a>
+          </li>
+          <li>
+            <a href="#projects">Artes<i class="fas fa-paint-brush"></i></a>
+          </li>
+          <li>
+            <a href="#chronos">Chronos<i class="fas fa-film"></i></a>
+          </li>
+          <li>
+            <a href="#cdc">C.D.C<i class="fas fa-film"></i></a>
+          </li>
+          <li>
+            <a href="#study">Graduação<i class="fas fa-graduation-cap"></i></a>
+          </li>
+          <li>
+            <a href="#about">Sobre<i class="fas fa-address-card"></i></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="home" id="home">
+    <div class="name">
+      <span>
         Ingrid Oliveira
+      </span>
+      <span class="sub-name">Designer de <span>Animação</span></span>
+    </div>
+
+    <div class="start anime">
+      <a href="#overview">
+        <button><i class="fab fa-google-play"></i> Start</button>
       </a>
     </div>
+  </div>
 
-    <a class="scroll-up hidden" href="#home" id="scroll-up">
-      <i class="fas fa-chevron-up"></i>
-    </a>
-
-    <div class="menu hidden" id="menu">
-      <ul>
-        <li id="li-menu">
-          <i class="fas fa-bars menu-icon"></i>
-          <ul class="dropdown" aria-label="submenu" id="dropdown">
-            <li>
-              <a href="#home">Início<i class="fas fa-home"></i></a>
-            </li>
-            <li>
-              <a href="#projects">Artes<i class="fas fa-paint-brush"></i></a>
-            </li>
-            <li>
-              <a href="#chronos">Chronos<i class="fas fa-film"></i></a>
-            </li>
-            <li>
-              <a href="#cdc">C.D.C<i class="fas fa-film"></i></a>
-            </li>
-            <li>
-              <a href="#study">Graduação<i class="fas fa-graduation-cap"></i></a>
-            </li>
-            <li>
-              <a href="#about">Sobre<i class="fas fa-address-card"></i></a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+  <div class="overview" id="overview">
+    <div class="title anime-opacity">
+      <div class="typing typing-anime" id="typing-overview">
+        <span class="magenta">Informações</span>
+      </div>
     </div>
 
-    <div class="home" id="home">
-      <div class="name">
-        <span
-          >
-          Ingrid Oliveira
-        </span>
-        <span class="sub-name">Designer de <span>Animação</span></span>
-      </div>
+    <div class="bar anime-opacity"></div>
+    <div class="divider-overview anime-opacity"></div>
 
-      <div class="start anime">
-        <a href="#overview">
-          <button><i class="fab fa-google-play"></i> Start</button>
+    <div class="rivaldo anime">
+      <span class="line">
+        <span class="tab key">Nome</span><span class="two-point">:</span>
+        <span class="value">Ingrid Oliveira</span>
+      </span>
+
+      <span class="line">
+        <span class="tab key">Profissão</span><span class="two-point">:</span>
+        <span class="value">Designer de Animação - <a href="https://www.youtube.com/channel/UCp4E15Xy3-dY94-L5pfU49Q"
+            style="color: yellow;">Giramille</a></span>
+      </span>
+
+      <span class="line">
+        <span class="tab key">Idade</span><span class="two-point">:</span>
+        <span class="number">21</span>
+      </span>
+
+      <span class="line">
+        <span class="tab key">Estado</span><span class="two-point">:</span>
+        <span class="value">São Paulo</span>
+      </span>
+
+      <span class="line">
+        <span class="tab key">E-mail</span><span class="two-point">:</span>
+        <span class="value">i.oliveira1220@gmail.com</span>
+      </span>
+
+      <span class="line">
+        <span class="tab key">Portfólio</span><span class="two-point">:</span>
+        <span class="value">@dindiarts_</span>
+      </span>
+
+      <span class="line">
+        <span class="tab key">Formação</span><span class="two-point">:</span>
+        <span class="value">Cursando Design de Animação - Anhembi Morumbi</span>
+      </span>
+
+
+
+    </div>
+  </div>
+
+  <div class="projects" id="projects">
+    <div class="divider anime-opacity">
+      <span></span><span>
+        <div class="title">
+          <div class="typing typing-anime" id="typing-projects">
+            <div class="cd magenta">Minhas Artes</div>
+          </div>
+        </div>
+      </span><span></span>
+    </div>
+
+    <div class="project pizza anime-opacity">
+      <div class="article pizza-progress">
+        <div class="link">
+          <a href="https://www.instagram.com/p/CRgvCawr2BW/" target="_blank" title="Ir para Tsuyu"><i
+              class="fas fa-external-link-alt"></i></a>
+
+        </div>
+        <div class="project-name">
+          <span class="number">1.</span> O que eu utilizo 🎨
+        </div>
+        <div class="project-description">
+          <ul>
+
+
+            <li>
+              <div class="progress">
+                <div class="progress-done" data-done="100"></div>
+                <div class="progress-text">
+                  <div>✅ Adobe Photoshop</div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <div class="progress-done" data-done="100"></div>
+                <div class="progress-text">
+                  <div>✅ Toon Boom Harmony</div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <div class="progress-done" data-done="100"></div>
+                <div class="progress-text">
+                  <div>✅ Spark AR Studio</div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <div class="progress-done" data-done="100"></div>
+                <div class="progress-text">
+                  <div>✅ Blender</div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <div class="progress-done" data-done="100"></div>
+                <div class="progress-text">
+                  <div>✅ Adobe Premier</div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <div class="progress-done" data-done="100"></div>
+                <div class="progress-text">
+                  <div>✅ Adobe After Effects</div>
+                </div>
+              </div>
+
+
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <a href="https://www.instagram.com/dindiarts_/" target="_blank" title="Ir para DindiArts">
+          <img src="./src/assets/img/mavis.jfif" />
+          <img src="./src/assets/img/gambito.jfif" />
+          <img src="./src/assets/img/tsuyu.jpg" />
         </a>
       </div>
     </div>
 
-    <div class="overview" id="overview">
-      <div class="title anime-opacity">
-        <div class="typing typing-anime" id="typing-overview">
-          <span class="magenta">Informações</span>
-        </div>
-      </div>
 
-      <div class="bar anime-opacity"></div>
-      <div class="divider-overview anime-opacity"></div>
-
-      <div class="rivaldo anime">
-        <span class="line">
-          <span class="tab key">Nome</span><span class="two-point">:</span>
-          <span class="value">Ingrid Oliveira</span>
-        </span>
-
-        <span class="line">
-          <span class="tab key">Profissão</span><span class="two-point">:</span>
-          <span class="value">Designer de Animação - <a href="https://www.youtube.com/channel/UCp4E15Xy3-dY94-L5pfU49Q" style="color: yellow;">Giramille</a></span>
-        </span>
-
-        <span class="line">
-          <span class="tab key">Idade</span><span class="two-point">:</span>
-          <span class="number">21</span>
-        </span>
-
-        <span class="line">
-          <span class="tab key">Estado</span><span class="two-point">:</span>
-          <span class="value">São Paulo</span>
-        </span>
-
-        <span class="line">
-          <span class="tab key">E-mail</span><span class="two-point">:</span>
-          <span class="value">i.oliveira1220@gmail.com</span
-          >
-        </span>
-
-        <span class="line">
-          <span class="tab key">Portfólio</span><span class="two-point">:</span>
-          <span class="value">@dindiarts_</span
-          >
-        </span>
-
-        <span class="line">
-          <span class="tab key">Formação</span
-          ><span class="two-point">:</span>
-          <span class="value">Cursando Design de Animação - Anhembi Morumbi</span
-          >
-        </span>
-
-        
-
-      </div>
-    </div>
-
-    <div class="projects" id="projects">
-      <div class="divider anime-opacity">
-        <span></span
-        ><span
-          ><div class="title">
-            <div class="typing typing-anime" id="typing-projects">
-              <div class="cd magenta">Minhas Artes</div>
-            </div>
-          </div></span
-        ><span></span>
-      </div>
-
-      <div class="project pizza anime-opacity">
-        <div class="article pizza-progress">
-          <div class="link">
-            <a
-              href="https://www.instagram.com/p/CRgvCawr2BW/"
-              target="_blank"
-              title="Ir para Tsuyu"
-              ><i class="fas fa-external-link-alt"></i
-            ></a>
-            
-          </div>
-          <div class="project-name">
-            <span class="number">1.</span> O que eu utilizo 🎨
-          </div>
-          <div class="project-description">
-            <ul>
-              
-            
-              <li>
-                <div class="progress">
-                  <div class="progress-done" data-done="100"></div>
-                  <div class="progress-text">
-                    <div>✅ Adobe Photoshop</div>
-                  </div>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-done" data-done="100"></div>
-                  <div class="progress-text">
-                    <div>✅ Toon Boom Harmony</div>
-                  </div>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-done" data-done="100"></div>
-                  <div class="progress-text">
-                    <div>✅ Spark AR Studio</div>
-                  </div>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-done" data-done="100"></div>
-                  <div class="progress-text">
-                    <div>✅ Blender</div>
-                  </div>
-                </div>     
-                
-                <div class="progress">
-                  <div class="progress-done" data-done="100"></div>
-                  <div class="progress-text">
-                    <div>✅ Adobe Premier</div>
-                  </div>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-done" data-done="100"></div>
-                  <div class="progress-text">
-                    <div>✅ Adobe After Effects</div>
-                  </div>
-                </div>
-              
-                
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="container">
-          <a
-            href="https://www.instagram.com/dindiarts_/"
-            target="_blank"
-            title="Ir para DindiArts"
-          >
-            <img src="./src/assets/img/mavis.jfif" />
-            <img src="./src/assets/img/gambito.jfif"  />
-            <img src="./src/assets/img/tsuyu.jpg" />
-          </a>
-        </div>
-      </div>
-
-    
 
     <div class="open-source" id="chronos">
       <div class="divider anime-opacity">
-        <span></span
-        ><span
-          ><div class="title">
+        <span></span><span>
+          <div class="title">
             <div class="typing typing-anime" id="typing-open-source">
               <div class="cd magenta">Projeto Chronos</div>
             </div>
-          </div></span
-        ><span></span>
+          </div>
+        </span><span></span>
       </div>
 
       <div class="open-source-article anime">
-        <iframe width="600" height="315"
-         src="https://www.youtube.com/embed/eHm8VK7Vqfk">
+        <iframe width="600" height="315" src="https://www.youtube.com/embed/eHm8VK7Vqfk">
         </iframe>
-    </div>
-
-    <div class="open-source" id="cdc">
-      <div class="divider anime-opacity">
-        <span></span
-        ><span
-          ><div class="title">
-            <div class="typing typing-anime" id="typing-open-source">
-              <div class="cd magenta">Caos de Família</div>
-            </div>
-          </div></span
-        ><span></span>
       </div>
 
-      <div class="open-source-article anime">
-        <iframe width="600" height="315"
-         src="https://www.youtube.com/embed/2Zyzjh7TQio">
-        </iframe>
-    </div>
-
-    <div class="open-source" id="cdc">
-      <div class="divider anime-opacity">
-        <span></span
-        ><span
-          ><div class="title">
-            <div class="typing typing-anime" id="typing-open-source">
-              <div class="cd magenta">Au Au Miau Miau - Giramille</div>
+      <div class="open-source" id="cdc">
+        <div class="divider anime-opacity">
+          <span></span><span>
+            <div class="title">
+              <div class="typing typing-anime" id="typing-open-source">
+                <div class="cd magenta">Caos de Família</div>
+              </div>
             </div>
-          </div></span
-        ><span></span>
-      </div>
-
-      <div class="open-source-article anime">
-        <iframe width="600" height="315"
-         src="https://www.youtube.com/embed/Uvq_VORNuEE">
-        </iframe>
-    </div>
-
-    <div class="study" id="study">
-      <div class="divider anime-opacity">
-        <span></span
-        ><span
-          ><div class="title">
-            <div class="typing typing-anime" id="typing-study">
-
-              <div class="cd magenta">Minha Graduação</div>
-            </div>
-          </div></span  
-        ><span></span>
-      </div>
-
-      <div class="study-article anime">
-        <div class="tech angular tech-border">
-          <div class="tech-title">Anhembi Morumbi</div>
-          <div class="tech-description">
-           Design de <span>Animação</span>
-          </div>
-         
+          </span><span></span>
         </div>
-        <div class="tech node tech-border">
-          <div class="tech-title">6º Semestre</div>
-          <div class="tech-description">
-            Conclusão em <span>2023</span>
-          </div>
-          
+
+        <div class="open-source-article anime">
+          <iframe width="600" height="315" src="https://www.youtube.com/embed/2Zyzjh7TQio">
+          </iframe>
         </div>
-      </div>
-    </div>
 
-    <div class="about" id="about">
-      <div class="divider anime-opacity">
-        <span></span
-        ><span
-          ><div class="title">
-            <div class="typing typing-anime" id="typing-about">
-              <div class="cd magenta">Sobre Mim</div>
-            </div>
-          </div></span
-        ><span></span>
-      </div>
-
-      <div class="about-article anime">
-        <div class="about-contact">
-          <div class="img">
-            <img
-              src="./src/assets/img/dindi.jfif"
-              alt="Ingrid"
-              title="Avatar Ingrid"
-            />
+        <div class="open-source" id="cdc">
+          <div class="divider anime-opacity">
+            <span></span><span>
+              <div class="title">
+                <div class="typing typing-anime" id="typing-open-source">
+                  <div class="cd magenta">Au Au Miau Miau - Giramille</div>
+                </div>
+              </div>
+            </span><span></span>
           </div>
 
-          <div class="contacts">
-
-            <div class="contact">
-              <a
-                href="mailto:i.oliveira1220@gmail.com"
-                target="_blank"
-                title="Email"
-                ><i class="fas fa-envelope"></i
-              ></a>
-            </div>
-
-            <div class="contact">
-              <a
-                href="https://www.linkedin.com/in/ingrid-oliveira-silva-90aa341a3/"
-                title="LinkedIn"
-                target="_blank"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-            </div>
-
-            <div class="contact">
-              <a
-                href="https://www.instagram.com/dindiarts_/?hl=pt"
-                target="_blank"
-                title="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </div>
-
+          <div class="open-source-article anime">
+            <iframe width="600" height="315" src="https://www.youtube.com/embed/Uvq_VORNuEE">
+            </iframe>
           </div>
-        </div>
-        <div class="about-text">
-          <div class="text">
-            <i class="fas fa-quote-left"></i> Em 2015 comecei um
-            <span>curso</span> de <span>Levels</span> na <span>Panda School of Arts</span>, onde me 
-            graduei em 2016. Desde então, venho trabalhando em diversos projetos pessoais, que envolvem
-            tanto <span>Ilustração Digital</span> quanto <span>Animação 2D e 3D</span>. Atualmente, estou
-            cursando <span>Design de Animação</span> na <span>Anhembi Morumbi</span> e sou <span>Designer de Animação</span> na
-            <a href="https://www.giramille.com.br/"><span>Giramille</span></a>. Minha principal motivação é
-            impactar positivamente a vida de pessoas através do meu trabalho.
 
-            <i class="fas fa-quote-right"></i>
-          </div>
-        </div>
-      </div>
-    </div>
+          <div class="open-source" id="cdc">
+            <div class="divider anime-opacity">
+              <span></span><span>
+                <div class="title">
+                  <div class="typing typing-anime" id="typing-open-source">
+                    <div class="cd magenta">Posts Carrossel</div>
+                  </div>
+                </div>
+              </span><span></span>
+            </div>
 
-    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            <div class="slider">
 
-    <script src="src/js/particles.js"></script>
-    <script src="src/js/fire.js"></script>
-    <script src="src/js/app.js"></script>
-    <script src="./src/js/scroll.js"></script>
-    <script src="src/js/events.js"></script>
-  </body>
+              <!-- slide 1 -->
+              <div class="slide">
+                <img src="./src/assets/img/carrousel/carrossel-1.png" alt="" />
+              </div>
+
+              <!-- slide 2 -->
+              <div class="slide">
+                <img src="./src/assets/img/carrousel/carrossel-2.png" alt="" />
+              </div>
+
+              <!-- slide 3 -->
+              <div class="slide">
+                <img src="./src/assets/img/carrousel/carrossel-3.png" alt="" />
+              </div>
+
+              <!-- Control buttons -->
+              <button class="btn btn-next">></button>
+              <button class="btn btn-prev"><</button>
+
+            </div>
+
+            <div class="slider">
+
+              <!-- slide 1 -->
+              <div class="slide2">
+                <img src="./src/assets/img/carrousel2/carrossel-1.png" alt="" />
+              </div>
+
+              <!-- slide 2 -->
+              <div class="slide2">
+                <img src="./src/assets/img/carrousel2/carrossel-2.png" alt="" />
+              </div>
+
+              <!-- slide 3 -->
+              <div class="slide2">
+                <img src="./src/assets/img/carrousel2/carrossel-3.png" alt="" />
+              </div>
+
+              <!-- Control buttons -->
+              <button class="btn btn-next2">></button>
+              <button class="btn btn-prev2"><</button>
+
+            </div>
+
+            <script>
+              /// Select all slides
+              const slides = document.querySelectorAll(".slide");
+              const slides2 = document.querySelectorAll(".slide2");
+
+              // loop through slides and set each slides translateX
+              slides.forEach((slide, indx) => {
+                slide.style.transform = `translateX(${indx * 100}%)`;
+              });
+
+              // loop through slides and set each slides translateX
+              slides2.forEach((slide, indx) => {
+                slide.style.transform = `translateX(${indx * 100}%)`;
+              });
+
+              // select next slide button
+              const nextSlide = document.querySelector(".btn-next");
+
+              // current slide counter
+              let curSlide = 0;
+              // maximum number of slides
+              let maxSlide = slides.length - 1;
+
+              // add event listener and navigation functionality
+              nextSlide.addEventListener("click", function () {
+                // check if current slide is the last and reset current slide
+                if (curSlide === maxSlide) {
+                  curSlide = 0;
+                } else {
+                  curSlide++;
+                }
+
+                //   move slide by -100%
+                slides.forEach((slide, indx) => {
+                  slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                });
+              });
+
+              // select next slide button
+              const prevSlide2 = document.querySelector(".btn-prev2");
+
+              // add event listener and navigation functionality
+              prevSlide2.addEventListener("click", function () {
+                // check if current slide is the first and reset current slide to last
+                if (curSlide === 0) {
+                  curSlide = maxSlide;
+                } else {
+                  curSlide--;
+                }
+
+                //   move slide by 100%
+                slides2.forEach((slide, indx) => {
+                  slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                });
+              });
+
+              // second
+
+              // select next slide button
+              const nextSlide2 = document.querySelector(".btn-next2");
+
+              // current slide counter
+              let curSlide2 = 0;
+              // maximum number of slides
+              let maxSlide2 = slides.length - 1;
+
+              // add event listener and navigation functionality
+              nextSlide2.addEventListener("click", function () {
+                // check if current slide is the last and reset current slide
+                if (curSlide === maxSlide) {
+                  curSlide = 0;
+                } else {
+                  curSlide++;
+                }
+
+                //   move slide by -100%
+                slides2.forEach((slide, indx) => {
+                  slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                });
+              });
+
+              // add event listener and navigation functionality
+              prevSlide2.addEventListener("click", function () {
+                // check if current slide is the first and reset current slide to last
+                if (curSlide === 0) {
+                  curSlide = maxSlide;
+                } else {
+                  curSlide--;
+                }
+
+                //   move slide by 100%
+                slides2.forEach((slide, indx) => {
+                  slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                });
+              });
+
+            </script>
+
+            <div class="study" id="study">
+              <div class="divider anime-opacity">
+                <span></span><span>
+                  <div class="title">
+                    <div class="typing typing-anime" id="typing-study">
+
+                      <div class="cd magenta">Minha Graduação</div>
+                    </div>
+                  </div>
+                </span><span></span>
+              </div>
+
+              <div class="study-article anime">
+                <div class="tech angular tech-border">
+                  <div class="tech-title">Anhembi Morumbi</div>
+                  <div class="tech-description">
+                    Design de <span>Animação</span>
+                  </div>
+
+                </div>
+                <div class="tech node tech-border">
+                  <div class="tech-title">6º Semestre</div>
+                  <div class="tech-description">
+                    Conclusão em <span>2023</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="about" id="about">
+              <div class="divider anime-opacity">
+                <span></span><span>
+                  <div class="title">
+                    <div class="typing typing-anime" id="typing-about">
+                      <div class="cd magenta">Sobre Mim</div>
+                    </div>
+                  </div>
+                </span><span></span>
+              </div>
+
+              <div class="about-article anime">
+                <div class="about-contact">
+                  <div class="img">
+                    <img src="./src/assets/img/dindi.jfif" alt="Ingrid" title="Avatar Ingrid" />
+                  </div>
+
+                  <div class="contacts">
+
+                    <div class="contact">
+                      <a href="mailto:i.oliveira1220@gmail.com" target="_blank" title="Email"><i
+                          class="fas fa-envelope"></i></a>
+                    </div>
+
+                    <div class="contact">
+                      <a href="https://www.linkedin.com/in/ingrid-oliveira-silva-90aa341a3/" title="LinkedIn"
+                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                    <div class="contact">
+                      <a href="https://www.instagram.com/dindiarts_/?hl=pt" target="_blank" title="Instagram"><i
+                          class="fab fa-instagram"></i></a>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="about-text">
+                  <div class="text">
+                    <i class="fas fa-quote-left"></i> Em 2015 comecei um
+                    <span>curso</span> de <span>Levels</span> na <span>Panda School of Arts</span>, onde me
+                    graduei em 2016. Desde então, venho trabalhando em diversos projetos pessoais, que envolvem
+                    tanto <span>Ilustração Digital</span> quanto <span>Animação 2D e 3D</span>. Atualmente, estou
+                    cursando <span>Design de Animação</span> na <span>Anhembi Morumbi</span> e sou <span>Designer
+                      de Animação</span> na
+                    <a href="https://www.giramille.com.br/"><span>Giramille</span></a>. Minha principal motivação
+                    é
+                    impactar positivamente a vida de pessoas através do meu trabalho.
+
+                    <i class="fas fa-quote-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+            <script src="src/js/particles.js"></script>
+            <script src="src/js/fire.js"></script>
+            <script src="src/js/app.js"></script>
+            <script src="./src/js/scroll.js"></script>
+            <script src="src/js/events.js"></script>
+</body>
+
 </html>
