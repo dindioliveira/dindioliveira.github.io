@@ -18,7 +18,7 @@
   position: relative;
   text-decoration: none;
   transition-duration: 0.5s;
-  cursor: pointer;
+  cursor: url(../assets/img/fire.png), default !important;
 }
 
 .menu-icon {

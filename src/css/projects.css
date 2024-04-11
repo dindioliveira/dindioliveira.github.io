@@ -125,7 +125,7 @@
   transform: rotate(-30deg) skew(25deg) scale(.7);
   transition: 0.5s;
   border-radius: 15px;
-  cursor: pointer;
+  cursor: url(../assets/img/fire.png), default !important;
 }
 
 
